@@ -13,28 +13,29 @@ services:
     core:
         container_name: openhim-core
         build:
-          context: .
-          dockerfile: Dockerfile
-        environment:
-            - mongo_url=mongodb://mongo/openhim
-            - mongo_atnaUrl=mongodb://mongo/openhim
+            context: .
+            dockerfile: Dockerfile
+        env_file:
+            - db.env
+        volumes:
+            - ./openhim-core-config.json:/usr/src/app/config/default.json
         ports:
-            - "8080:8080"
             - "5000:5000"
             - "5001:5001"
+            - "5002:5002"
             - "5050:5050"
             - "5051:5051"
-            - "5052:5052"
+            - "5053:5053"
             - "7788:7788"
         depends_on:
             - mongo
-
+        stdin_open: true
     console:
         container_name: openhim-console
         image: jembi/openhim-console
         ports:
             - "80:80"
         volumes:
-            - ./default.json:/usr/share/nginx/html/config/default.json
+            - ./console-config.json:/usr/share/nginx/html/config/default.json
         depends_on:
             - core

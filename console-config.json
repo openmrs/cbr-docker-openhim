@@ -3,11 +3,11 @@
   "minimumCoreVersion": "3.4.0",
   "protocol": "https",
   "host": "localhost",
-  "port": 8080,
+  "port": 5002,
   "title": "Admin Console",
-  "footerTitle": "OpenHIM Administration Console",
+  "footerTitle": "OpenHIM Administration Console For CBR",
   "footerPoweredBy": "<a href='http://openhim.org/' target='_blank'>Powered by OpenHIM</a>",
   "loginBanner": "",
-  "mediatorLastHeartbeatWarningSeconds": 60,
+  "mediatorLastHeartbeatWarningSeconds": 30,
   "mediatorLastHeartbeatDangerSeconds": 120
 }
