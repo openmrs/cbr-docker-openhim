@@ -29,7 +29,7 @@ services:
             - "7788:7788"
         depends_on:
             - mongo
-        stdin_open: true
+
     console:
         container_name: openhim-console
         image: jembi/openhim-console

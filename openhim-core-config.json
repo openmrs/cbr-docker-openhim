@@ -119,7 +119,7 @@
         "port": 5051
       },
       "tcp": {
-        "enabled": false,
+        "enabled": true,
         "port": 5052
       }
     },
