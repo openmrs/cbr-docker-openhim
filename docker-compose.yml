@@ -9,6 +9,8 @@ services:
         volumes:
             - ./openhim_db.gz:/openhim_db.gz
             - ./init_db.sh:/docker-entrypoint-initdb.d/init_db.sh
+        logging:
+          driver: none
 
     core:
         container_name: openhim-core
