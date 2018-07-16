@@ -11,9 +11,11 @@ RUN curl -L "https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_
     -o "/tmp/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz" && \
     tar -C /usr/local/bin -xzvf "/tmp/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz"
 
-# Install XDS mediator and add the OpenHIM certificate to the trust store
+# Install XDS mediator
 ENV MEDIATOR_DIR="mediator"
 ENV MEDIATOR_FILE=${MEDIATOR_DIR}/openhim-mediator-xds-1.0.3.tar.gz
+ENV MEDIATOR_DIR ${MEDIATOR_DIR}
+
 RUN mkdir -p "${MEDIATOR_DIR}" \
     && curl -L "https://drive.google.com/a/openmrs.org/uc?authuser=0&id=0B0MQgyHMZoOaY1Z5bzItS0RaQVU&export=download" \
             -o ${MEDIATOR_FILE} \
